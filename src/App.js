@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import AddHeader from "./components/addHeader/AddHeader";
+import AddBlock from "./components/addBlock/AddBlock";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [data, setData] = useState([])
+    const addNewData = (newData) => {
+        setData([...data, newData])
+    }
+    return (
+        <div className='container'>
+            <AddHeader addNewData={addNewData}/>
+            <AddBlock data={data}/>
+        </div>
+    );
 }
 
 export default App;
+
