@@ -2,62 +2,6 @@ import React, {useEffect, useState} from 'react';
 import App from "../../App";
 import styled from "styled-components";
 
-const AppWrapper = styled.div`
-  text-align: center;
-  width: 100%;
-  min-height: 100vh;
-  padding: 2rem;
-  background: black;
-  display: flex;
-  justify-content: center;
-
-  .signIn {
-    color: #AD9BE9;
-    font-size: 34px;
-  }
-
-   .signin-input {
-    width: 340px;
-    height: 39px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    background: #FFF;
-    outline: none;
-    border: none;
-    color: #4A026B;
-    font-size: 15px;
-    caret-color: red;
-    margin: 20px 0;
-  }
-
-  & .signin-input:active {
-    border: 1px solid #3F3F3F;
-  }
-  
-  & .signin-btn {
-    color: gold;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 16px 18px;
-    width: 228px;
-    height: 51px;
-    border-radius: 10px;
-    background: #600A87;
-    border: none;
-    cursor: pointer;
-    margin: 20px 276px;
-  }
-
-   .signin-btn:hover {
-    background: #600A87;
-  }
-
-   .signin-btn:active {
-    background: #520B73;
-  }
-
-`
-
 function SignIn() {
     const [open, setOpen] = useState(false)
     const [email, setEmail] = useState("");
@@ -133,3 +77,60 @@ function SignIn() {
 }
 
 export default SignIn;
+
+
+const AppWrapper = styled.div`
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background: black;
+  display: flex;
+  justify-content: center;
+
+  .signIn {
+    color: #AD9BE9;
+    font-size: 34px;
+  }
+
+   .signin-input {
+    width: 340px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FFF;
+    outline: none;
+    border: none;
+    color: #4A026B;
+    font-size: 15px;
+    caret-color: red;
+    margin: 20px 0;
+  }
+
+  & .signin-input:active {
+    border: 1px solid #3F3F3F;
+  }
+  
+  & .signin-btn {
+    color: gold;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 18px;
+    width: 228px;
+    height: 51px;
+    border-radius: 10px;
+    background: #600A87;
+    border: none;
+    cursor: pointer;
+    margin: 20px 276px;
+  }
+
+   .signin-btn:hover {
+    background: #600A87;
+  }
+
+   .signin-btn:active {
+    background: #520B73;
+  }
+
+`

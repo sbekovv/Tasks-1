@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SignIn from "./components/SIgnIn/signIn";
 import {createGlobalStyle} from "styled-components";
+import {ExpenceContextPorvider} from "./store";
 
 
 const Global = createGlobalStyle`
@@ -11,13 +12,14 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
     font-family: sans-serif;
   }
-
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Global/>
-    <SignIn />
+     <ExpenceContextPorvider>
+         <Global/>
+         <SignIn />
+     </ExpenceContextPorvider>
   </React.StrictMode>
 );

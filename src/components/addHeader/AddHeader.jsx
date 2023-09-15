@@ -1,5 +1,42 @@
-import React, {useReducer} from 'react';
+import React, {useContext} from 'react';
 import styled from "styled-components";
+import {ExpenceContext} from "../../store";
+
+function AddHeader() {
+const {formData,inlainSubmit , handleInputChange, inlainHeader, form, addNewData } = useContext(ExpenceContext)
+    return (
+        <div>
+        <HeaderStyle>
+            {formData.isOpen ? <form className='forms' onSubmit={inlainSubmit}>
+                <div className='forms-outline'>
+                    <label htmlFor="one" >Заголовок</label>
+                    <input name="title" type="text" id="one" value={formData.title} onChange={handleInputChange}/>
+                </div>
+
+                <div className='forms-outline'>
+                    <label htmlFor="two">Количество</label>
+                    <input name="number" type="number" id="two" value={formData.number} onChange={handleInputChange}/>
+                </div>
+
+                <div className='forms-outline'>
+                    <label className="forms-outline2" htmlFor="three">Датировать</label>
+                    <input name="data" type="date" id="three" value={formData.data} onChange={handleInputChange}/>
+                </div>
+
+                <div className='forms-btn'>
+                    <button className='forms-btn1' onClick={inlainHeader}>Отмена</button>
+                    <button className='forms-btn1' type="submit" >Добавить расходы</button>
+                </div>
+            </form> :   <div className='item'>
+                <button onClick={form}>Добавить новый расход</button>
+            </div>}
+        </HeaderStyle>
+        </div>
+    );
+}
+
+export default AddHeader;
+
 
 const HeaderStyle = styled.div`
   .item {
@@ -47,14 +84,17 @@ const HeaderStyle = styled.div`
     margin: 0 0 26px 0;
   }
 
-  .form-btn {
-    margin-top: 28px;
+  .forms-btn  {
+    margin-top: -28px;
+    margin-left: 300px;
   }
 
   .forms label {
     color: #000;
     font-size: 14px;
     font-weight: 500;
+    position: relative;
+    top: -25px;
   }
 
   .forms input {
@@ -68,6 +108,9 @@ const HeaderStyle = styled.div`
     color: #4A026B;
     font-size: 15px;
     caret-color: red;
+    position: relative;
+    top: -25px;
+    
   }
 
   .forms input:active {
@@ -78,19 +121,29 @@ const HeaderStyle = styled.div`
     display: flex;
     flex-direction: column;
   }
+  
+  .forms-outline2 {
+    margin-top: 30px;
+  }
+  
+  .forms-btn {
+    margin-top: 10px;
+    margin-left: 30px;
+  }
 
   .forms-btn1 {
     color: #FFF;
     font-size: 16px;
     font-weight: 500;
-    padding: 18px 18px;
+    padding: 18px 15px;
     border-radius: 10px;
     background: #4A026B;
     border: none;
     cursor: pointer;
-    margin: 0 10px;
+    margin: -20px 10px;
   }
 
+  
   .forms-btn1:hover {
     background: #600A87;
   }
@@ -106,95 +159,3 @@ const HeaderStyle = styled.div`
   }
 
 `
-function AddHeader({addNewData}) {
-    function formReducer(state, action) {
-        switch (action.type) {
-            case 'SET_FIELD':
-                return { ...state, [action.fieldName]: action.value };
-            case 'OPEN_FORM':
-                return { ...state, isOpen: true };
-            case 'CLOSE_FORM':
-                return { ...state, isOpen: false };
-            case 'RESET_FORM':
-                return { ...state, title: '', number: '', data: '' };
-            default:
-                return state;
-        }
-    }
-
-    const initialState = {
-        isOpen: false,
-        title: '',
-        number: '',
-        data: '',
-    };
-
-    const [formData, dispatch] = useReducer(formReducer, initialState);
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        dispatch({ type: 'SET_FIELD', fieldName: name, value });
-    };
-
-    const form = () => {
-        dispatch({ type: 'OPEN_FORM' });
-    };
-
-    const inlainHeader = () => {
-        dispatch({ type: 'CLOSE_FORM' });
-        dispatch({ type: 'RESET_FORM' });
-    };
-    const inlainSubmit = (e) => {
-        e.preventDefault();
-
-        if (formData.title.trim() === '' || formData.number === '' || formData.data.trim() === '') {
-            alert("Введите текст");
-            return;
-        }
-
-        const data = {
-            title: formData.title,
-            data: formData.data,
-            number: formData.number,
-            id: Math.random()
-        };
-        addNewData(data);
-
-        dispatch({ type: 'RESET_FORM' });
-        dispatch({ type: 'CLOSE_FORM' });
-    };
-
-
-    return (
-        <HeaderStyle>
-            {formData.isOpen ? <form className='forms' onSubmit={inlainSubmit}>
-                <div className='forms-outline'>
-                    <label htmlFor="one">Заголовок</label>
-                    <input name="title" type="text" id="one" value={formData.title} onChange={handleInputChange}/>
-                </div>
-
-                <div className='forms-outline'>
-                    <label htmlFor="two">Количество</label>
-                    <input name="number" type="number" id="two" value={formData.number} onChange={handleInputChange}/>
-                </div>
-
-                <div className='forms-outline'>
-                    <label htmlFor="three">Датировать</label>
-                    <input name="data" type="date" id="three" value={formData.data} onChange={handleInputChange}/>
-                </div>
-
-                <div className='forms-btn'>
-                    <button className='forms-btn1' onClick={inlainHeader}>Отмена</button>
-                    <button className='forms-btn1' type="submit" >Добавить расходы</button>
-                </div>
-            </form> : <div className='item'>
-                <button onClick={form}>Добавить новый расход</button>
-            </div>}
-
-        </HeaderStyle>
-    );
-}
-
-export default AddHeader;
-
-
