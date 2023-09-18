@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import App from "../../App";
+import React, {useContext, useEffect, useState} from 'react';
 import styled from "styled-components";
+import {ExpenceContext} from "../../store";
+import Enter from "../enter/Enter";
 
 function SignIn() {
     const [open, setOpen] = useState(false)
@@ -11,7 +12,7 @@ function SignIn() {
     const [emailError, setEmailError] = useState("Не должен быть пустым");
     const [passwordError, setPasswordError] = useState("Не должен быть пустым");
     const [formValid, setFormValid] = useState(false)
-
+const {about} = useContext(ExpenceContext)
     useEffect(() => {
         if (emailError || passwordError) {
             setFormValid(false)
@@ -59,20 +60,24 @@ function SignIn() {
     }
 
     return (
-        <AppWrapper>
-            {open ? <App/> : <form>
-                <h1 className="signIn">Sign In</h1>
-                {(emailDirty && emailError)}
-                <div style={{color: 'red'}}>{emailError}</div>
-                <input className="signin-input" onChange={e => emailHandler(e)} value={email} onBlue={e => blueHandler(e)} type="email"
-                       placeholder="Email" />
-                {(passwordDirty && passwordError)}
-                <div style={{color: 'red'}}>{passwordError}</div>
-                <input className="signin-input" onChange={e => passwordHandler(e)} value={password} onBlue={e => blueHandler(e)} type="password"
-                       placeholder="Password"/> <br/>
-                <button className="signin-btn" onClick={form} disabled={!formValid}>Enter</button>
-            </form>}
-        </AppWrapper>
+       <div>
+           <AppWrapper>
+               {open ? <Enter/> :  <form>
+                   <h1 className="signIn">Sign In</h1>
+                   {(emailDirty && emailError)}
+                   <div style={{color: 'red'}}>{emailError}</div>
+                   <input className="signin-input" onChange={e => emailHandler(e)} value={email}
+                          onBlue={e => blueHandler(e)} type="email"
+                          placeholder="Email"/>
+                   {(passwordDirty && passwordError)}
+                   <div style={{color: 'red'}}>{passwordError}</div>
+                   <input className="signin-input" onChange={e => passwordHandler(e)} value={password}
+                          onBlue={e => blueHandler(e)} type="password"
+                          placeholder="Password"/> <br/>
+                   <button className="signin-btn" onClick={form} disabled={!formValid}>Enter</button>
+               </form>}
+           </AppWrapper>
+       </div>
     );
 }
 
@@ -91,9 +96,10 @@ const AppWrapper = styled.div`
   .signIn {
     color: #AD9BE9;
     font-size: 34px;
+    margin-top: 200px;
   }
 
-   .signin-input {
+  .signin-input {
     width: 340px;
     height: 39px;
     flex-shrink: 0;
@@ -110,7 +116,7 @@ const AppWrapper = styled.div`
   & .signin-input:active {
     border: 1px solid #3F3F3F;
   }
-  
+
   & .signin-btn {
     color: gold;
     font-size: 16px;
@@ -125,12 +131,11 @@ const AppWrapper = styled.div`
     margin: 20px 276px;
   }
 
-   .signin-btn:hover {
+  .signin-btn:hover {
     background: #600A87;
   }
 
-   .signin-btn:active {
+  .signin-btn:active {
     background: #520B73;
   }
-
 `

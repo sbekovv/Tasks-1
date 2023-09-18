@@ -19,17 +19,17 @@ function Items() {
             <div>
                 {!isHidden && (
                     <div className="card">
-                         <div className="data">2023 01 11</div>
-                         <p>Alpen Gold</p>
-                         <span className="card-btn">
+                        <div className="data">2023 01 11</div>
+                        <p>Alpen Gold</p>
+                        <span className="card-btn">
              <button className="forms-btn1" type="button"
                      onClick={handleDeleteClicks}><ion-icon name="trash-outline"></ion-icon></button>
                              <button className="forms-btn1"><ion-icon name="sync-outline"></ion-icon> </button>
            </span>
-                         <div className="price">$30</div>
-                     </div>
-                 )}
-             </div>
+                        <div className="price">$30</div>
+                    </div>
+                )}
+            </div>
 
             <div>
                 {data.map((item) => {
@@ -40,8 +40,8 @@ function Items() {
                                 <p> {item.title}</p>
                                 <span className="card-btn">
                          <button className="forms-btn1"
-                      type="button"
-                      onClick={() => handleDeleteClick(item.id)}><ion-icon name="trash-outline"></ion-icon></button>
+                                 type="button"
+                                 onClick={() => handleDeleteClick(item.id)}><ion-icon name="trash-outline"></ion-icon></button>
                                      <button onClick={() => editHandler(item)} className="forms-btn1"><ion-icon name="sync-outline"></ion-icon> </button>
                         </span>
                                 <div className="price">${item.number}</div>

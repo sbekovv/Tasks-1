@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SignIn from "./components/SIgnIn/signIn";
 import {createGlobalStyle} from "styled-components";
 import {ExpenceContextPorvider} from "./store";
+import App from "./App";
 
 
 const Global = createGlobalStyle`
@@ -19,7 +19,7 @@ root.render(
   <React.StrictMode>
      <ExpenceContextPorvider>
          <Global/>
-         <SignIn />
+         <App/>
      </ExpenceContextPorvider>
   </React.StrictMode>
 );

@@ -28,14 +28,25 @@ const initialState = {
 }
     const [formData, dispatch] = useReducer(formReducer, initialState);
     const [data, setData] = useState([])
+    const [changePages, setChangePages] = useState({
+        home: false,
+        about: false,
+        signIn: true
+    })
     const addNewData = (newData) => {
         setData([...data, newData])
     }
-
-     const editHandler = (newData) => {
-     dispatch({type: "EDIT_FIELD", payload: newData})
-     }
-
+const handlePageChange = (numbers) => {
+const pages = {
+    home: numbers === 3 ? true : false,
+    about: numbers === 2 ? true : false,
+    signIn: numbers === 1 ? true : false
+}
+    setChangePages(pages)
+}
+    const editHandler = (newData) => {
+        dispatch({type: "EDIT_FIELD", payload: newData})
+    }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -79,6 +90,8 @@ const initialState = {
         editHandler,
         formData,
         addNewData,
+        handlePageChange,
+        changePages,
     }
 
     return (<ExpenceContext.Provider value={state}>

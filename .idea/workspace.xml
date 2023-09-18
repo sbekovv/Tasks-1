@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89942295-3519-4340-87d9-900a96003eb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about/About.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/enter/Enter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SIgnIn/signIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SIgnIn/signIn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addBlock/AddBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addBlock/AddBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addHeader/AddHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addHeader/AddHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addItems/Items.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addItems/Items.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,20 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/OneDrive/Рабочий стол/Projeck/tasks",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Todo-list&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -94,6 +99,13 @@
       <workItem from="1694678095654" duration="2361000" />
       <workItem from="1694680511316" duration="6929000" />
       <workItem from="1694696765760" duration="441000" />
+      <workItem from="1694765240735" duration="6588000" />
+      <workItem from="1694772137509" duration="15000" />
+      <workItem from="1694802737769" duration="5836000" />
+      <workItem from="1694846889013" duration="9498000" />
+      <workItem from="1694933651926" duration="1356000" />
+      <workItem from="1695019717598" duration="7320000" />
+      <workItem from="1695044510939" duration="3596000" />
     </task>
     <servers />
   </component>

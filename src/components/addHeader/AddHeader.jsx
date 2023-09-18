@@ -6,6 +6,7 @@ function AddHeader() {
 const {formData,inlainSubmit , handleInputChange, inlainHeader, form, addNewData } = useContext(ExpenceContext)
     return (
         <div>
+
         <HeaderStyle>
             {formData.isOpen ? <form className='forms' onSubmit={inlainSubmit}>
                 <div className='forms-outline'>
@@ -45,7 +46,7 @@ const HeaderStyle = styled.div`
     flex-shrink: 0;
     border-radius: 12px;
     background: #AD9BE9;
-    margin: 28px 0;
+    margin: 28px 350px;
   }
 
   .item button {
@@ -81,7 +82,7 @@ const HeaderStyle = styled.div`
     border-radius: 12px;
     background: #AD9BE9;
     padding: 55px 40px;
-    margin: 0 0 26px 0;
+    margin: 50px 350px;
   }
 
   .forms-btn  {
@@ -157,5 +158,4 @@ const HeaderStyle = styled.div`
     top: 46px;
     margin-top: 30px;
   }
-
 `

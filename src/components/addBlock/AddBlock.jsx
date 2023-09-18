@@ -27,6 +27,7 @@ export default AddBlock;
 
 const AddBlockStyle = styled.div`
   .block {
+    margin-left: 350px;
     width: 780px;
     height: 100%;
     border-radius: 12px;
